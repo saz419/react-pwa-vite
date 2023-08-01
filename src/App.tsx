@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import HomePage from './components/home';
+import './App.scss'
 
 function App() {
   return (
     <BrowserRouter
-      basename={import.meta.env.DEV ? '/' : '/react-pwa-vite/'}
+      basename={import.meta.env.DEV ? '/' : `${import.meta.env.VITE_GithubPageBaseUrl}`}
     >
       <Routes>
         <Route

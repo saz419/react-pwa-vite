@@ -21,6 +21,7 @@ const HomePage = () => {
     }
 
     useEffect(() => {
+        console.log(import.meta.env.VITE_GithubPageBaseUrl)
         const ck = Cookies.get("snack")
         console.log(ck)
         if (ck !== undefined) {
@@ -31,7 +32,7 @@ const HomePage = () => {
     return (
         <>
             <div>
-                <h1>Hello World</h1>
+
                 <button onClick={() => handleSetCookie('oreo')} >Set Cookie: Oreo</button>
                 <br />
                 <button onClick={() => handleRemoveCookies()} >Remove Cookie</button>
@@ -41,7 +42,10 @@ const HomePage = () => {
                     {JSON.stringify(snack)}
                 </code>
                 <br />
-                <a href={import.meta.env.DEV ? '/' : '/react-pwa-vite/'}>Reload to view result</a>
+                <a href={import.meta.env.DEV ? '/' : `${import.meta.env.VITE_GithubPageBaseUrl}`} >
+                    <button> Refresh the data </button>
+                </a>
+                <br />
                 <br />
                 <Link to='about'>About Us</Link>
             </div>
