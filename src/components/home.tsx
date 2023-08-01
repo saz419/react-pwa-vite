@@ -6,7 +6,7 @@ const HomePage = () => {
     const [snack, setSnack] = useState({})
 
     function handleSetCookie(value: string) {
-        const setC = Cookies.set("snack", JSON.stringify({ "cookie": value }))
+        const setC = Cookies.set("snack", JSON.stringify({ "snack": value }))
         console.log(setC)
     }
 
@@ -38,7 +38,7 @@ const HomePage = () => {
                 <button onClick={() => handleRemoveCookies()} >Remove Cookie</button>
 
                 <br />
-                data: <code>
+                Cookies: <code>
                     {JSON.stringify(snack)}
                 </code>
                 <br />
