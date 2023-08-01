@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import HomePage from './components/home';
 
 function App() {
   return (
@@ -9,10 +10,7 @@ function App() {
         <Route
           path='/'
           element={
-            <div>
-              <h1>Hello World</h1>
-              <Link to='about'>About Us</Link>
-            </div>
+            <HomePage />
           }
         />
         <Route path='/about' element={<div>About</div>} />
